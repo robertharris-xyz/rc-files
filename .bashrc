@@ -61,7 +61,7 @@ function parse_git_dirty {
 }
 
 # Format of bash prompt
-export PS1="\[\e[31m\][\[\e[m\]\[\e[33m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\[\e[35m\]\w\[\e[m\]\[\e[32m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]]\[\e[m\]\\$ "
+export PS1="\[\e[01;31m\][\[\e[m\]\[\e[01;33m\]\u\[\e[01;m\]@\[\e[01;36m\]\h\[\e[01;m\]:\[\e[01;35m\]\w\[\[\]\[\e[01;32m\]\`parse_git_branch\`\[\e[01;m\]\[\e[01;31m\]]\[\e[01;m\]\\$ "
 
 #########################################################
 # Aliases
@@ -71,6 +71,17 @@ alias off="shutdown now" # Power down the device.
 alias ls="ls -hN --color=auto --group-directories-first"
 alias grep="grep --color=auto" # Colour grep - highlight desired sequence.
 alias ccat="highlight --out-format=ansi" # Colour-cat: Print a file with syntax highlighting.
+alias sl="ls"
+
+# Git
+alias gs="git status"
+alias gp="git pull"
+alias gpush="git push origin" # + branch name
+alias gb="git branch" # + branch name
+alias gc="git checkout" # + branch name
+alias gcb="git checkout -b" # + branch name
+alias ggph="git log --graph --oneline --decorate"
+alias gd="git diff --color --color-words --abbrev" # + file name
 
 #########################################################
 # Internet packages
